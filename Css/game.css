@@ -1,0 +1,71 @@
+*{
+    transition: all 100ms ease-in-out;
+}
+
+section{
+    opacity: 1;
+    display: none;
+    
+    /*Flex: */
+    flex-direction: column;
+    gap: 8px;
+
+    /*Tamanho: */
+    width: 90vw;
+    
+    /*Margens: */
+    margin: 10px auto;
+}
+
+.inventario{
+
+    /* Cores: */
+    background-color: rgb(255, 224, 50);
+    
+    /*Tamanho: */
+    width: auto;
+
+    /*Flex: */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+    /*Margens: */
+    padding: 4px 4px;
+}
+
+.carta{
+    /* Cores: */
+    background-color: rgb(255, 181, 22);
+    border: 1px black solid;
+
+    /*Flex: */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    padding: 8px 8px;
+}
+
+#menu{
+    width: 30%;
+    
+    /*Flex: */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    /*Margens: */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#menu h1{
+    text-align: center;
+}

@@ -1,0 +1,33 @@
+
+/* Menores que 450px */
+@media (max-width: 450px) {
+    h1{
+        /* Fonte: */
+        font-size: 22pt;
+    }
+
+    button{
+         /* Fonte: */
+        font-size: 14pt;
+        
+        /*Tamanho: */
+        width: 100%;
+
+        /*Margens: */
+        margin-top: 2px;
+        padding: 2px;
+    }
+    p{
+        /* Fonte: */
+        font-size: 14pt;
+        text-align: center;
+    }
+    
+
+    #imagem-inicial{
+        /*Tamanho: */
+        width: 135px;
+        height: 135px;
+    }
+
+}
