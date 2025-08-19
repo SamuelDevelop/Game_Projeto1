@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic WorkShop</title>
+    <title>Space Expansion</title>
 
     <!--Fontes:-->
         <!--Barriecito Google_Fonts:-->
@@ -17,87 +17,23 @@
         <link rel="Stylesheet" href="Css/game.css">
 </head>
 <body>
-    <section id="sec1">
-        <h1>Gerenciador de Equipamentos</h1>
-        <h2>Inventário</h2>
-        
-        <div class="inventario">
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
+    <header>
+        <h1>Space Expansion</h1>
+    </header>
 
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
+    <div id="Painel-Status">
+        <h1>Status:</h1>
+        <div id="status">
+            <p id="nome">Nome_do_jogador:</p>
+            <p id="dias" class="atributo">Dias Jogados: 0</p>
+            <p id="valor" class="atributo">Receita: $0</p>
+            <p id="forca" class="atributo">Força = 10</p>
+        </div>     
+    </div>
 
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-        </div>
+    <section id="sec1"></section>
 
-        
-        <h2>Itens à venda</h2>
-        
-        <div class="inventario">
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-        </div>
-    </section>
-
-    <section id="sec2">
-        <h1>Recursos</h1>
-        
-        <h2>Comprar</h2>
-        <div class="inventario">
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-        </div>
-        
-        <h2>Seu Estoque</h2>
-        <div class="inventario">
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-
-            <div class="carta">
-                <h3>Nome do Item</h3>
-                <img src="Sprites/itens/sword_Dima.svg" h="64px" height="64px">
-            </div>
-        </div>
-    </section>
+    <section id="sec2"></section>
 
     <section id="sec3">
         <h1>Batalhas</h1>
@@ -111,19 +47,47 @@
         <h2>Seus Status</h2>
     </section>
 
+    <section id="sec5"></section>
+    <section id="sec6"></section>
+
     <section id="erro">
         <p>Erro de Seção, A seção que você Busca é Inválida!</p>
     </section>
+
+    <div id="mensagem">
+        <h1>Mensagem</h1>
+        <p>o que raios aconeceu </p>
+        <button>Fechar</button>
+    </div>
 
     <div id="menu">
         <h1>Gerenciar:</h1>
         <button onclick="mostrarSecao(0, SECOES)">Equipamentos</button>
         <button onclick="mostrarSecao(1, SECOES)">Recursos</button>
+        <button onclick="mostrarSecao(4, SECOES)">Compras</button>
         <button onclick="mostrarSecao(2, SECOES)">Batalhas</button>
         <button onclick="mostrarSecao(3, SECOES)">Pesquisas</button>
+        <button onclick="resetarDados()">Resetar</button>
     </div>
     
+    <!--Os Um zilhão de JavaScripts de cria! :) -->
+    <script src="Javascripts/GeneratePlanet.js"></script>
 
+    <script src="Javascripts/constValues.js"></script>
+    <script src="Javascripts/constSprites.js"></script>
+    <script src="Javascripts/constCraftings.js"></script>
+    <script src="Javascripts/MensagerControl.js"></script>
+    <script src="Javascripts/ShoppingControl.js"></script>
+    
+
+    <script src="Javascripts/localStorageSetup.js"></script>
+    <script src="Javascripts/util.js"></script>
+    <script src="Javascripts/TimeProgression.js"></script>
+
+    <script src="Javascripts/InvetoryControl.js"></script>
     <script src="Javascripts/SectionControl.js"></script>
+    
+
+    
 </body>
 </html>

@@ -1,8 +1,21 @@
 *{
+    /*Especificidades:*/
     transition: all 100ms ease-in-out;
+}
+#Painel-Status{
+    /*Flex: */
+    flex-direction: column;
+    gap: 8px;
+
+    /*Tamanho: */
+    width: 90vw;
+    
+    /*Margens: */
+    margin: 10px auto;
 }
 
 section{
+    /*Especificidades:*/
     opacity: 1;
     display: none;
     
@@ -48,6 +61,7 @@ section{
     flex-wrap: wrap;
     gap: 2px;
 
+    /*Especificidades:*/
     padding: 8px 8px;
 }
 
@@ -68,4 +82,34 @@ section{
 
 #menu h1{
     text-align: center;
+}
+
+#status{
+    /*Flex: */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    /*Margens: */
+    margin-left: auto;
+    margin-right: auto;
+}
+.atributo{
+    /* Cores: */
+    background-color: rgb(119, 0, 255);
+    
+    /*Tamanho: */
+    width: auto;
+
+    /*Flex: */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+    /*Margens: */
+    padding: 4px 7px;
+    border-radius: 12px;
 }

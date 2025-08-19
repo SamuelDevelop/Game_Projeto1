@@ -14,18 +14,21 @@
         <!--Importações: -->
         <link rel="Stylesheet" href="Css/basic.css">
         <link rel="Stylesheet" href="Css/responsive.css">
+        <link rel="Stylesheet" href="Css/formulario.css">
 </head>
 <body>
     <header>
         <h1>Magic WorkShop</h1>
     </header>
-    
     <div id="menu-inicial">
-        <img id="imagem-inicial" src="Sprites/prototipo.svg">
-        <p>Crie a sua oficina do Reino Mágico e lute por sua glória em torneios!</p>
-        <button onclick="window.location.href='criarJogo.html'"> Novo Jogo</button>
+        <h2>Para Começar Digte seu nome:</h2>
+        <input type="text" value="Player" id="nome" required>
+        <button onclick="validar()">Enviar</button>
     </div>
     
-
+    <script src="Javascripts/localStorageSetup.js"></script>
+    <script src="Javascripts/util.js"></script>
+    <script src="Javascripts/CriarSave.js"></script>
+    
 </body>
 </html>
