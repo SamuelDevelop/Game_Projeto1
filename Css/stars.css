@@ -1,0 +1,53 @@
+/* Tela inteira para o céu */
+#sky {
+    z-index: -97;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Cada estrela */
+.star {
+  --size: 2px;        /* substituída via JS */
+  --dur: 3s;          /* substituída via JS */
+  --delay: 0s;        /* substituída via JS */
+
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  opacity: 0;
+  /* brilho suave */
+  background: radial-gradient(circle, #fff 0 40%, rgba(255,255,255,.7) 60%, transparent 70%);
+  filter: drop-shadow(0 0 calc(var(--size) * 2) #fff);
+  animation: twinkle var(--dur) ease-in-out var(--delay) infinite;
+}
+
+@keyframes twinkle {
+  0%, 100%   { opacity: 0; transform: scale(0.8); }
+  15%, 25%   { opacity: 1; transform: scale(1); }
+  50%        { opacity: 0.3; transform: scale(0.9); }
+}
+
+/* Estrelas “novas” fazem um fade-in suave */
+.star.enter {
+  animation-name: twinkle, star-enter;
+  animation-duration: var(--dur), 600ms;
+  animation-timing-function: ease-in-out, ease-out;
+  animation-iteration-count: infinite, 1;
+}
+
+@keyframes star-enter {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Acessibilidade: menos animação para quem prefere */
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+

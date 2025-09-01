@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Expansion</title>
+    <link rel="icon" type="image/png" href="Sprites/planets/planet_2.png">
 
     <!--Fontes:-->
         <!--Barriecito Google_Fonts:-->
@@ -12,43 +13,89 @@
         <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
     
         <!--Importações: -->
+        
         <link rel="Stylesheet" href="Css/basic.css">
-        <link rel="Stylesheet" href="Css/responsive.css">
         <link rel="Stylesheet" href="Css/game.css">
+        <link rel="Stylesheet" href="Css/responsive.css">
+        <link rel="Stylesheet" href="Css/utils.css">
+        <link rel="stylesheet" href="Css/stars.css">
 </head>
 <body>
     <header>
-        <h1>Space Expansion</h1>
+        <h1 id="logo">Space Expansion</h1>
     </header>
 
-    <div id="Painel-Status">
-        <h1>Status:</h1>
-        <div id="status">
-            <p id="nome">Nome_do_jogador:</p>
-            <p id="dias" class="atributo">Dias Jogados: 0</p>
-            <p id="valor" class="atributo">Receita: $0</p>
-            <p id="forca" class="atributo">Força = 10</p>
-        </div>     
+    <div class="gradiente camada1"></div>
+    <div class="gradiente camada2"></div>
+
+    <div id="Painel-Status"></div>
+    
+    <div class="menu">
+        <div id="acao">
+            <button onclick="pararPassagemTempo()" title="Parar Tempo">
+                <img src="Sprites/IU/pause.png" width="54px" height="54px">
+            </button>
+        </div>
+        <div id="som" title="Música">
+            <button onclick="ativarMusica()">
+                <img src="Sprites/IU/semSom.png" width="54px" height="54px">
+            </button>
+        </div>
+        <div id="troca" title="Trocar Música">
+            <button onclick="trocarMusica()" >
+                <img src="Sprites/IU/change.png" width="54px" height="54px">
+            </button>
+        </div>
+    </div>
+    
+
+    <h1 id="gerenciar">Gerenciar:</h1>
+    <div class="menu">
+        <button onclick="mostrarSecao(9, SECOES)" class="botaoSecao" title="Administração">
+            <img src="Sprites/IU/flag.png" width="54px" height="54px">
+        </button> 
+        <button onclick="mostrarSecao(1, SECOES)" class="botaoSecao" title="Recursos">
+            <img src="Sprites/itens/Bars/bar_Madeira.png" width="54px" height="54px">
+        </button>
+        <button onclick="mostrarSecao(0, SECOES)" class="botaoSecao" title="Naves">
+            <img src="Sprites/IU/nave.png" width="54px" height="54px">
+        </button>
+        <button onclick="mostrarSecao(4, SECOES)" class="botaoSecao" title="Loja">
+            <img src="Sprites/IU/shop.png" width="54px" height="54px">
+        </button>
+        <button onclick="mostrarSecao(2, SECOES)" class="botaoSecao" title="Exploração Espacial">
+            <img src="Sprites/planets/planet_1.png" width="54px" height="54px">
+        </button>
+        <button onclick="mostrarSecao(3, SECOES)" class="botaoSecao" title="Pesquisas">
+            <img src="Sprites/IU/search.png" width="54px" height="54px">
+        </button>
+        <button onclick="mostrarSecao(6, SECOES)" class="botaoSecao" title="Tarefas">
+            <img src="Sprites/IU/calendar.png" width="54px" height="54px">
+        </button>
+        <button onclick="mostrarSecao(7, SECOES)" class="botaoSecao" title="Agentes">
+            <img src="Sprites/IU/sith.png" width="54px" height="54px">
+        </button> 
+        <button onclick="mostrarSecao(8, SECOES)" class="botaoSecao" title="Conquistas">
+            <img src="Sprites/IU/trofeu.png" width="54px" height="54px">
+        </button>                      
     </div>
 
     <section id="sec1"></section>
-
     <section id="sec2"></section>
-
-    <section id="sec3">
-        <h1>Batalhas</h1>
-        <h2>Suas Batalhas</h2>
-        <h2>Seus Status</h2>
-    </section>
-
+    <section id="sec3"></section>
     <section id="sec4">
-        <h1>Batalhas</h1>
-        <h2>Suas Batalhas</h2>
-        <h2>Seus Status</h2>
+        <h1>Pesquisas:</h1>
+        <h2>Em Breve! Tava com preguiça XD</h2>
     </section>
-
     <section id="sec5"></section>
     <section id="sec6"></section>
+    <section id="sec7"></section>
+    <section id="sec8"></section>
+    <section id="sec9">
+        <h1>Consquistas:</h1>
+        <h2>Em Breve!</h2>
+    </section>
+    <section id="sec10"></section>
 
     <section id="erro">
         <p>Erro de Seção, A seção que você Busca é Inválida!</p>
@@ -56,38 +103,55 @@
 
     <div id="mensagem">
         <h1>Mensagem</h1>
-        <p>o que raios aconeceu </p>
+        <p>o que raios aconeceu</p>
         <button>Fechar</button>
     </div>
 
-    <div id="menu">
-        <h1>Gerenciar:</h1>
-        <button onclick="mostrarSecao(0, SECOES)">Equipamentos</button>
-        <button onclick="mostrarSecao(1, SECOES)">Recursos</button>
-        <button onclick="mostrarSecao(4, SECOES)">Compras</button>
-        <button onclick="mostrarSecao(2, SECOES)">Batalhas</button>
-        <button onclick="mostrarSecao(3, SECOES)">Pesquisas</button>
-        <button onclick="resetarDados()">Resetar</button>
+    <div id="pop-Up">
+        <img src="" width="24px" height="24px">
+        <h3>Escrito o que será feito</h3>
     </div>
+
+    <audio id="player" src="musicas/Majoras Mask Astral Observatory Music.mp3" loop></audio>
     
     <!--Os Um zilhão de JavaScripts de cria! :) -->
+    
+    
+    <script src="Javascripts/util.js"></script>
+    <script src="Javascripts/localStorageSetup.js"></script>
+    <script src="Javascripts/LocalSave.js"></script>
+
     <script src="Javascripts/GeneratePlanet.js"></script>
+    <script src="Javascripts/Exploration.js"></script>
 
     <script src="Javascripts/constValues.js"></script>
     <script src="Javascripts/constSprites.js"></script>
     <script src="Javascripts/constCraftings.js"></script>
+    <script src="Javascripts/constClasses.js"></script>
+    <script src="Javascripts/pesquisas.js"></script>
+    
+    <script src="Javascripts/verificacaoTime.js"></script>
+    <script src="Javascripts/TasksControl.js"></script>
+
+    <script src="Javascripts/BatleControl.js"></script>
+    <script src="Javascripts/coloniasControl.js"></script>
+    
     <script src="Javascripts/MensagerControl.js"></script>
     <script src="Javascripts/ShoppingControl.js"></script>
-    
-
-    <script src="Javascripts/localStorageSetup.js"></script>
-    <script src="Javascripts/util.js"></script>
+    <script src="Javascripts/Crafiting.js"></script>
+        
     <script src="Javascripts/TimeProgression.js"></script>
 
+
+    <script src="Javascripts/InventoryControl3.js"></script>
+    <script src="Javascripts/InventoryControl2.js"></script>
     <script src="Javascripts/InvetoryControl.js"></script>
     <script src="Javascripts/SectionControl.js"></script>
+    <script src="Javascripts/conquistas.js"></script>
+    <script src="Javascripts/703P=N8JWwt.js"></script>
+    <script src="Javascripts/stars.js" defer></script>
+    <script src="Javascripts/sounds.js"></script>
     
-
-    
+    <p id="versao">versão 0.9.4 - Grilled ham and cheese</p>
 </body>
 </html>

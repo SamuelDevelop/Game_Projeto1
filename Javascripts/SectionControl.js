@@ -1,7 +1,6 @@
 /* Setup de Atributos */
 
 const SECOES = document.querySelectorAll("section");
-console.log(SECOES);
 
 /* Setup de Funções*/
 

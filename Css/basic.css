@@ -5,31 +5,71 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
-body{
-    
-    /* Cores: */
-    background-color: rgb(21, 6, 51);
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.gradiente {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  transition: opacity 3s ease-in-out; /* transição suave */
+}
+
+/* gradiente inicial */
+.camada1 {
+  background: linear-gradient(rgb(94, 196, 255), rgb(0, 119, 255), rgb(0, 117, 163), rgb(0, 39, 65));
+  z-index: -99;
+}
+
+/* gradiente final */
+.camada2 {
+  background: linear-gradient(rgb(31, 31, 105), rgb(20, 20, 75), rgb(14, 14, 56), rgb(3, 3, 20));
+  z-index: -98;
+  opacity: 0; /* começa invisível */
+  animation: fade 6s infinite alternate; /* anima a opacidade */
+}
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 header{
     
     /* Cores: */
-    background-color: rgb(89, 0, 255);
+    background-image: linear-gradient(rgb(33, 55, 255) ,rgb(9, 25, 255), rgb(0, 17, 175));
+
 
     /*Margens: */
     margin: 0px;
     padding: 10px 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+header button{
+    background-color: transparent;
+    width: 32px; height: 32px;
+    overflow: hidden;
+    border-radius: 0px;
+}
+
+header button img{
+    width: 24px; height: 24px;
+}
 h1{
     /* Fonte: */
     font-family: "Barriecito", system-ui;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
     font-size: 30pt;
     
     /* Cores: */
-    color: rgb(255, 218, 5)
+    color: rgb(255, 230, 0)
 }
 h2{
     /* Fonte: */
@@ -37,6 +77,16 @@ h2{
     font-weight: 400;
     font-style: normal;
     font-size: 20pt;
+    
+    /* Cores: */
+    color: rgb(255, 255, 255)
+}
+
+h3{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 14pt;
     
     /* Cores: */
     color: rgb(255, 255, 255)
@@ -60,7 +110,7 @@ button{
     
     /* Cores: */
     color: rgb(255, 255, 255);
-    background-color: rgb(89, 0, 255);
+    background-color: rgb(9, 95, 255);
 
     /* Bordas: */
     border: none;
@@ -79,15 +129,19 @@ button:hover{
     font-size: 14pt;
 
     /* Cores: */
-    color: rgb(89, 0, 255);
+    color: rgb(9, 95, 255);
     background-color: rgb(255, 255, 255);
+}
+
+button img{
+    width: 42px; height: 42px;
 }
 
 #menu-inicial{
     
     /*Tamanho: */
-    height: 70vh;
     width: 90vw;
+    margin: 10px;
 
     /*Flex: */
     display: flex;
@@ -109,7 +163,8 @@ button:hover{
 }
 #mensagem{
     /* Cores: */
-    background-color: rgb(177, 41, 255);
+    background-image: linear-gradient(rgb(0, 36, 104), rgb(19, 102, 255));
+    border: 3px solid rgba(255, 255, 255, 0.363);
 
     padding: 10px;
     
@@ -121,4 +176,77 @@ button:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#mensagem button{
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.397);
+}
+#mensagem button:hover{
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    background-image: linear-gradient(rgb(72, 84, 255), rgb(0, 17, 255));
+}
+
+#quadrado{
+    background-image: transparent;
+    border: 3px solid white;
+    padding: 8px;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#quadrado h1{
+    color: white;
+}
+.main-Button{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 0px;
+    display: block;
+    position: static;
+    width: 80vw;
+    margin: 10px auto;
+    margin-left: auto;
+}
+
+.main-Button:hover{
+    background-color: white;
+}
+
+#logo{
+    cursor: pointer;
+}
+
+#versao{
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}
+
+select{
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    font-family: "Barriecito", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14pt;
+    outline: none; 
+}
+
+select:hover{
+    background: rgb(9, 95, 255);
+}
+
+#classes option {
+  background: rgb(9, 95, 255);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+#classes option:hover{
+    background: rgb(255, 255, 255);
+    color: rgb(9, 95, 255);
 }

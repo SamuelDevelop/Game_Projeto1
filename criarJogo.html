@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic WorkShop</title>
+    <title>Space Expansion</title>
+    <link rel="icon" type="image/png" href="Sprites/planets/planet_2.png">
 
     <!--Fontes:-->
         <!--Barriecito Google_Fonts:-->
@@ -15,18 +16,40 @@
         <link rel="Stylesheet" href="Css/basic.css">
         <link rel="Stylesheet" href="Css/responsive.css">
         <link rel="Stylesheet" href="Css/formulario.css">
+        <link rel="stylesheet" href="Css/stars.css">
 </head>
 <body>
     <header>
-        <h1>Magic WorkShop</h1>
+        <h1>Space Expansion</h1>
     </header>
+
+    <div class="gradiente camada1"></div>
+    <div class="gradiente camada2"></div>
+
     <div id="menu-inicial">
-        <h2>Para Começar Digte seu nome:</h2>
+        <h2>Para Começar Digte um ID:</h2>
         <input type="text" value="Player" id="nome" required>
-        <button onclick="validar()">Enviar</button>
+        <h2>Nome do Seu Império:</h2>
+        <input type="text" value="Império Galático" id="impNome" required>
+        <h2>Escolha sua bandeira:</h2>
+        <img id="flag-choose" src="Sprites/flags/5.png">
+        <button id="trocar-flag" onclick="trocarbandeira()" class="main-Button">Trocar</button>
+        
+        <h2>Escolha uma classe:</h2>
+        <select id="classes">
+            <option type="text" value="a">Inteligente</option>
+            <option type="text" value="b">Guerreiro</option>
+            <option type="text" value="c">Comerciante</option>
+            <option type="text" value="d">Conquistador</option>
+            <option type="text" value="e">Cientista</option>
+        </select>
+        <p id="descricao-classe">Tempo de Pesquisa pequeno, preços menores, porém mais fraco</p>
+        <button onclick="validar()" class="main-Button">Criar Save</button>
     </div>
     
+    <script src="Javascripts/constClasses.js"></script>
     <script src="Javascripts/localStorageSetup.js"></script>
+    <script src="Javascripts/stars.js" defer></script>
     <script src="Javascripts/util.js"></script>
     <script src="Javascripts/CriarSave.js"></script>
     

@@ -4,14 +4,22 @@
 }
 #Painel-Status{
     /*Flex: */
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     gap: 8px;
+    align-items: center;
 
     /*Tamanho: */
     width: 90vw;
     
     /*Margens: */
-    margin: 10px auto;
+    margin: 2%;
+}
+@media (max-width: 500px) {
+    #Painel-Status{
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 section{
@@ -27,13 +35,22 @@ section{
     width: 90vw;
     
     /*Margens: */
-    margin: 10px auto;
+    margin: 10px 2%;
+}
+
+#mensagem .inventario{
+    height: 100px;
+    gap: 0px;
+}
+#mensagem .carta{
+    flex: 1 1 200px;
 }
 
 .inventario{
 
     /* Cores: */
-    background-color: rgb(255, 224, 50);
+    background-color: rgb(9, 12, 22);
+    border: 3px rgb(25, 87, 255) solid;
     
     /*Tamanho: */
     width: auto;
@@ -41,20 +58,25 @@ section{
     /*Flex: */
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
     gap: 10px;
     
     /*Margens: */
     padding: 4px 4px;
+
+    text-align: center;
 }
 
 .carta{
+
     /* Cores: */
-    background-color: rgb(255, 181, 22);
-    border: 1px black solid;
+    color: white;
+    background-image: linear-gradient(rgb(255, 237, 72), rgb(255, 174, 0), rgb(219, 124, 0));
+    border: 3px rgba(167, 39, 0, 0.699) solid;
 
     /*Flex: */
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,39 +87,96 @@ section{
     padding: 8px 8px;
 }
 
-#menu{
-    width: 30%;
+.carta h3, .carta p{
+    color: rgb(14, 14, 56);
+}
+
+.carta button{
+    color: rgb(14, 14, 56);
+    font-weight: bold;
+    background-image: linear-gradient(rgb(255, 237, 72), rgb(219, 124, 0));
+    border: 3px rgba(0, 22, 223, 0.699) solid;
+    
+}
+
+.carta button:hover{
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    background-image: linear-gradient(rgb(72, 84, 255), rgb(0, 17, 255));
+}
+@media (max-width: 830px) {
+    .carta{
+    /*Flex: */
+    flex: 1 1 200px;
+    }
+}
+
+.menu{
+    width: 80%;
     
     /*Flex: */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: stretch;
     flex-wrap: wrap;
-    gap: 2px;
 
     /*Margens: */
-    margin-left: auto;
+    margin-left: 2%;
     margin-right: auto;
 }
+@media (max-width: 500px) {
+    .menu{
+    /*Flex: */
+     width: 90%;
+    }
+}
 
-#menu h1{
+.menu h1{
     text-align: center;
 }
 
-#status{
+.menu button{
+    flex: 1 1 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: linear-gradient(rgb(33, 110, 255) ,rgb(9, 95, 255),rgb(0, 61, 175));
+    border: 3px rgba(0, 0, 0, 0.692) solid;
+    border-radius: 0px;
+    margin-top: 0px;
+}
+
+.menu button:hover{
+    background-image: linear-gradient(transparent, transparent);
+}
+.menu button img{
+    filter: drop-shadow(-1px 5px 6px #091479);
+}
+
+.menu button:nth-child(even){
+    border: 3px rgba(0, 0, 0, 0.342) solid;
+}
+
+.status{
     /*Flex: */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
-
-    /*Margens: */
-    margin-left: auto;
-    margin-right: auto;
 }
+
+#bandeira{
+    border: 3px white solid;
+    padding: 2px;
+    border-radius: 50%;
+}
+
 .atributo{
     /* Cores: */
-    background-color: rgb(119, 0, 255);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    background-image: linear-gradient(rgb(0, 89, 255) ,rgb(0, 75, 214),rgb(0, 46, 131));
+    border: 3px rgba(0, 0, 0, 0.692) solid;
+
     
     /*Tamanho: */
     width: auto;
@@ -111,5 +190,142 @@ section{
     
     /*Margens: */
     padding: 4px 7px;
-    border-radius: 12px;
+}
+
+.green-atributo{
+    /* Cores: */
+    font-weight: bolder;
+    background-image: linear-gradient(rgb(20, 110, 25) ,rgb(9, 75, 12),rgb(0, 59, 3));
+    border: 3px rgba(0, 0, 0, 0.692) solid;
+    
+    /*Tamanho: */
+    width: auto;
+
+    /*Flex: */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+    /*Margens: */
+    padding: 4px 7px;
+}
+
+.green-atributo , .red-atributo, .atributo{
+    color: rgb(255, 255, 255) !important;
+}
+
+.red-atributo{
+    /* Cores: */
+    background-image: linear-gradient(rgb(255, 17, 17) ,rgb(221, 0, 0),rgb(114, 0, 0));
+    border: 3px rgba(0, 0, 0, 0.692) solid;
+
+    
+    /*Tamanho: */
+    width: auto;
+
+    /*Flex: */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+    /*Margens: */
+    padding: 4px 7px;
+}
+
+.redIconStatus{
+    width: 54px;
+    height: 54x;
+    background-color: rgb(255, 54, 54);
+    border: 2px solid rgba(255, 255, 255, 0.466);
+    padding: 3px;
+}
+
+.greenIconStatus{
+    width: 54px;
+    height: 54x;
+    background-color: rgb(20, 255, 51);
+    border: 2px solid rgba(255, 255, 255, 0.466);
+    padding: 3px;
+}
+.iconStatus{
+    width: 54px;
+    height: 54x;
+    background-color: rgb(54, 125, 255);
+    border: 2px solid rgba(255, 255, 255, 0.466);
+
+    padding: 3px;
+}
+
+#gerenciar, #ferramentas, #sec-Dev-Tools{
+    margin-left: 2%;
+}
+
+#ferramentas, #sec-Dev-Tools{
+    display: none;
+}
+
+#cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+}
+#bandeira-show{
+    border: 3px solid white;
+    padding: 2px;
+    width: 52px; height: 52px;
+}
+
+#pop-Up{
+    background-image: linear-gradient(rgb(255, 237, 72), rgb(255, 174, 0), rgb(219, 124, 0));
+    border: 3px rgba(167, 39, 0, 0.699) solid;
+
+    padding: 5px 2px;
+    width: 90vw;
+    top:10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    position: fixed;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+}
+
+#pop-Up h3{
+    color: rgb(167, 39, 0);
+    text-align: center;
+}
+
+#pop-Up img{
+    width: 54px; height: 54px;
+    border: 1px rgba(167, 39, 0, 0.699) solid;
+}
+
+.conquista-cinza{
+    width: 100%;
+    padding: 8px;
+    background-image: linear-gradient(gray, rgb(88, 88, 88), rgb(39, 39, 39));
+    border: 3px rgba(0, 0, 0, 0.63) solid;
+}
+.conquista-golden{
+    width: 100%;
+    padding: 8px;
+    background-image: linear-gradient(rgb(255, 237, 72), rgb(255, 174, 0), rgb(219, 124, 0));
+    border: 3px rgba(167, 39, 0, 0.699) solid;
+}
+
+.conquista-golden h3{
+    color: rgba(255, 255, 255, 0.637);
+}
+.conquista-golden h2{
+    color: rgb(167, 39, 0);
 }

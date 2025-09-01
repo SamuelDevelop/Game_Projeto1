@@ -1,14 +1,25 @@
 
-/* Menores que 450px */
-@media (max-width: 450px) {
+/* Menores que 500px */
+@media (max-width: 500px) {
     h1{
         /* Fonte: */
-        font-size: 22pt;
+        font-size: 16pt;
     }
-
+    h2{
+        /* Fonte: */
+        font-size: 14pt;
+    }
+    h3{
+        /* Fonte: */
+        font-size: 10pt;
+    }
+    button img{
+        /* Tamanho: */
+        width: 28px; height: 28px;
+    }
     button{
          /* Fonte: */
-        font-size: 14pt;
+        font-size: 12pt;
         
         /*Tamanho: */
         width: 100%;
@@ -19,7 +30,7 @@
     }
     p{
         /* Fonte: */
-        font-size: 14pt;
+        font-size: 10pt;
         text-align: center;
     }
     
@@ -29,5 +40,71 @@
         width: 135px;
         height: 135px;
     }
+    #Painel-Status{
+        gap: 1px;
+    }
+    .iconStatus, .redIconStatus{
+        width: 28px;
+        height: 28x;
+        padding: 2px;
+    }
+    .custo img{
+        width: 28px !important;
+        height: 28px !important;
+    }
+    .inventario{
+        gap: 2px;
+        padding: 2px 4px;
+    }
+    #mensagem .inventario{
+        height: 150px;
+        overflow: scroll;
+    }
+    .carta{
+        border: 1px rgba(255, 255, 255, 0.404) solid;
+        gap: 0px;
+        padding: 2px 2px;
+    }
+    .carta img{
+        width: 32px;
+        height: 32px;
+    }
+    .quebra-Custo{
+        width: 100%;
 
+        display: flex;
+        flex-direction: row;        
+    }
+    .quebra-Custo .custo{
+        width: 100%;
+    }
+    .quebra-Custo .atributo, .quebra-Custo .red-atributo, .quebra-Custo .green-atributo{
+        flex: 1;
+    }
+    #bandeira{
+        width: 32px; height: 32px;
+    }
+    
+}
+
+@media (max-width: 700px) {
+    #mensagem{
+    /*Flex: */
+        width: 95vw;
+        position: fixed;
+        top: 5%;
+        left: 2%;
+        transform: none;
+    }
+    #config{
+        display: none;
+    }
+    #pop-Up img{
+        width: 24px; height: 24px;
+        border: 1px rgba(167, 39, 0, 0.699) solid;
+    }
+
+    section .inventario{
+        max-height: 200px;
+    }
 }

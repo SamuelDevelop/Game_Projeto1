@@ -1,76 +1,61 @@
 
-if (!localStorage.getItem("dados")) {
+function criarDados(nome, nomeImp, spriteFlag="Sprites/flags/5.png", classe = CABECA){
   const dados = {
-    nomeJogador: 'player',
+    nomeJogador: nome,
+    nomeImperio: nomeImp,
+    bandeira: spriteFlag,
     dias: 0,
-    salario: 10,
-    receita: 1000,
-    forca: 0,
-    perDesconto: 1,
-    
+    salario: classe.salario,
+    receita: classe.receita,
+    forca: classe.forca,
+    aumentoCustosPesquisa: classe.aumentoCustosPesquisa,
+    custoPesquisa: classe.custoPesquisa,
+    perDesconto: classe.perDesconto,
+    tempTrabalho: classe.tempTrabalho,
+    tempPesquisa: classe.tempPesquisa,
+    aumentoForca: classe.aumentoForca,
+    levelPesquisaForca: 1,
+    levelPesquisaTrabalho: 1,
+    levelPesquisaDesconto: 1,
+    pesquisaEmAndamento: false,
+
+
     recursos: {
       madeira: 0,
       pedra: 0,
-      cobre: 0,
+      tungstenio: 0,
       ferro: 0,
-      vemelhita: 0,
+      vermelhita: 0,
       diamante: 0
     },
 
     qntEquipamentos: {
-      espadaMadeira: 0,
-      espadaPedra: 0,
-      espadaCobre: 0,
-      espadaFerro: 0,
-      espadaVemelhita: 0,
-      espadaDiamante: 0,
+      shipWar: 0,
+      shipTravel: 0,
+      shipSpy: 0,
+      shipDestroyer: 0,
+      shipBus: 0,
+      shipAngular: 0
+    },
 
-      escudoMadeira: 0,
-      escudoPedra: 0,
-      escudoCobre: 0,
-      escudoFerro: 0,
-      escudoVemelhita: 0,
-      escudoDiamante: 0
-    }
+    agentes: {
+      sith: 0,
+      sayajin: 0,
+      yoda: 0,
+      special: 0,
+    },
+
+    listaAfazeres: [],
+    planetaAlvo: null,
+    planetasConquistados: [],
+    vitorias: [],
+    conquistas: [false, false, false, false,false,false,false,false,false,false,false,false,false],
+    numConquistas: 0,
   };
   localStorage.setItem("dados", JSON.stringify(dados));
 }
 
-function resetarDados() {
-  const dadosOriginais = {
-    nomeJogador: 'player',
-    dias: 0,
-    salario: 10,
-    receita: 1000,
-    forca: 0,
-    perDesconto: 1,
-    
-    recursos: {
-      madeira: 0,
-      pedra: 0,
-      cobre: 0,
-      ferro: 0,
-      vemelhita: 0,
-      diamante: 0
-    },
-
-    qntEquipamentos: {
-      espadaMadeira: 0,
-      espadaPedra: 0,
-      espadaCobre: 0,
-      espadaFerro: 0,
-      espadaVemelhita: 0,
-      espadaDiamante: 0,
-
-      escudoMadeira: 0,
-      escudoPedra: 0,
-      escudoCobre: 0,
-      escudoFerro: 0,
-      escudoVemelhita: 0,
-      escudoDiamante: 0
-    }
-  };
-
-  
-  localStorage.setItem("dados", JSON.stringify(dadosOriginais));
+function deletarDados(){
+  localStorage.removeItem("dados");
+  location.reload();
 }

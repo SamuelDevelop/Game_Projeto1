@@ -1,0 +1,39 @@
+#Planeta-Status, #Planeta-Show{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+#Planeta-Mensage{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0px;
+    justify-content: space-between;
+}
+@media (max-width: 400px) {
+    #Planeta-Show img{
+        display: none;
+    }
+}
+.quebra-Custo{
+    width: 100%;
+}
+.custo{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.custo p{
+    width: 50%;
+}
+
+.custo img{
+    width: 42px;
+    height: 42px;
+}

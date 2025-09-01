@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic WorkShop</title>
+    <title>Space Expansion</title>
+    <link rel="icon" type="image/png" href="Sprites/planets/planet_2.png">
 
     <!--Fontes:-->
         <!--Barriecito Google_Fonts:-->
@@ -13,19 +14,50 @@
     
         <!--Importações: -->
         <link rel="Stylesheet" href="Css/basic.css">
+        <link rel="Stylesheet" href="Css/game.css">
         <link rel="Stylesheet" href="Css/responsive.css">
+        <link rel="stylesheet" href="Css/stars.css">
 </head>
 <body>
     <header>
-        <h1>Magic WorkShop</h1>
+        <h1>Space Expansion</h1>
     </header>
     
+    <div class="gradiente camada1"></div>
+    <div class="gradiente camada2"></div>
+
     <div id="menu-inicial">
-        <img id="imagem-inicial" src="Sprites/prototipo.svg">
-        <p>Crie a sua oficina do Reino Mágico e lute por sua glória em torneios!</p>
-        <button onclick="window.location.href='criarJogo.html'"> Novo Jogo</button>
+        <video id="video-inicial" autoplay muted loop width="64" height="64">
+            <source src="Sprites/planets/anim_1.mp4" type="video/mp4">
+        </video>
+        <p>Crie seu Império Galático! Conquiste riquezas, crie seus exércitos e explore a galáxia em busca de poder!</p>        
+    </div>
+    <div id="saves">
+        <p>Se estiver vendo isso é por que seu ultimo save está desatualizado e você precisará criar um novo save! Delete seu save:</p>
+        <button onclick="deletarDados()" class="main-Button"> Deletar Save</button>
     </div>
     
+    <script src="Javascripts/localStorageSetup.js"></script>
+    <script src="Javascripts/util.js"></script>
+    <script src="Javascripts/mainPage.js"></script>
+    <script src="Javascripts/stars.js" defer></script>
+    
+    <script>
+        const animacoes = [
+            "Sprites/planets/anim_1.mp4",
+            "Sprites/planets/anim_2.mp4",
+            "Sprites/planets/anim_3.mp4"
+        ];
 
+        let indice = 0;
+        const video = document.getElementById("video-inicial");
+
+        setInterval(() => {
+            indice = (indice + 1) % animacoes.length;
+            video.src = animacoes[indice]; // troca o vídeo
+            video.load();                 // carrega o novo vídeo
+            video.play();                 // toca automaticamente
+        }, 3000);
+    </script>
 </body>
 </html>
